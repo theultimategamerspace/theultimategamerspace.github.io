@@ -59,7 +59,7 @@
     var fruits = document.querySelectorAll('.fruit');
     var fruitIndex = 0;
     setTimeout(function throwFruit() {
-      fruitIndex = Math.random() * 8;
+      fruitIndex = Math.floor(Math.random() * 8);
       fruits[fruitIndex].style.top = '10vh';
       setTimeout(function dropFruit() {
         fruits[fruitIndex].style.top = '100vh';
