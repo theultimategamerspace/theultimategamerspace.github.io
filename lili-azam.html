@@ -12,7 +12,12 @@
    width: 20px;
     height: 20px;
     transform: rotate(45deg);
+    display: none;
+    position: absolute;
     
+  }
+  .knife.visible {
+    display: block;
   }
   .fruit {
     height: 150px;
@@ -79,6 +84,22 @@
         setTimeout(throwFruit, 500);
       }, 500);
     }, 1000);
+    var knife = document.querySelector('.knife');
+    var knifeTracking = false;
+    window.addEventListener('mousedown', function showBlade() {
+      knife.classList.add('visible');
+      knifeTracking = true;
+    });
+    window.addEventListener('mouseup', function hideBlade() {
+      knife.classList.remove('visible');
+      knifeTracking = false;
+    });
+    window.addEventListener('mousemove', function moveBlade(mouseEvent) {
+      if (knifeTracking){
+        knife.style.top = mouseEvent.clientY;  
+        knife.style.left = mouseEvent.clientX;  
+      }
+    });
   </script>
 </body>
 
