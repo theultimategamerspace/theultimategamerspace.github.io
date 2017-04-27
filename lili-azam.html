@@ -96,8 +96,8 @@
     });
     window.addEventListener('mousemove', function moveBlade(mouseEvent) {
       if (knifeTracking){
-        knife.style.top = mouseEvent.clientY;  
-        knife.style.left = mouseEvent.clientX;  
+        knife.style.top = mouseEvent.clientY + 'px'; 
+        knife.style.left = mouseEvent.clientX + 'px';
       }
     });
   </script>
