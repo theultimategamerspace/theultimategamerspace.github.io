@@ -44,7 +44,9 @@
     var frog = document.querySelector('.frog');
     var fishes = document.querySelector('.fish');
     window.addEventListener('keypress', function (event) {
-      console.log(event)
+      if(event.code == 'Space') {
+        console.log('spacebar pressed');
+      }
     });
   </script>
 </body>
