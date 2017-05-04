@@ -42,7 +42,7 @@
   <div class="fish fish4"></div>
   <script type="text/javascript">
     var frog = document.querySelector('.frog');
-    var fishes = Array.from(document.querySelector('.fish'));
+    var fishes = document.querySelectorAll('.fish');
     window.addEventListener('keypress', function (event) {
       if(event.code == 'Space') {
         frog.style.left = (parseInt(frog.style.left || 0, 10) + 100) + 'px';
