@@ -45,7 +45,7 @@
     var fishes = document.querySelector('.fish');
     window.addEventListener('keypress', function (event) {
       if(event.code == 'Space') {
-        console.log('spacebar pressed');
+        frog.style.left = (Number(frog.style.left) + 100) + 'px';
       }
     });
   </script>
