@@ -45,7 +45,7 @@
     var fishes = document.querySelector('.fish');
     window.addEventListener('keypress', function (event) {
       if(event.code == 'Space') {
-        frog.style.left = (parseInt(frog.style.left, 10) + 100) + 'px';
+        frog.style.left = (parseInt(frog.style.left || 0, 10) + 100) + 'px';
       }
     });
   </script>
