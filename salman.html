@@ -52,6 +52,12 @@
       var frogRect = frog.getBoundingClientRect();
       fishes.forEach(function (fish) {
         var fishRect = fish.getBoundingClientRect();
+        if (!(frogRect.right < fishRect.left || 
+                frogRect.left > fishRect.right || 
+                frogRect.bottom < fishRect.top || 
+                frogRect.top > fishRect.bottom)) {
+          console.log('overlap!!!');
+        }
       });
     }, 200);
   </script>
