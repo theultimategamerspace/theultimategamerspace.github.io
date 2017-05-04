@@ -48,5 +48,11 @@
         frog.style.left = (parseInt(frog.style.left || 0, 10) + 100) + 'px';
       }
     });
+    setTimeout(function checkFishes() {
+      var frogRect = frog.getBoundingClientRect();
+      fishes.forEach(function (fish) {
+        var fishRect = fish.getBoundingClientRect();
+      });
+    }, 200);
   </script>
 </body>
