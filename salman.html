@@ -15,6 +15,19 @@
   body{
     background-color: blue;
   }
+  body.gameOver {
+    background-color: black;
+  }
+  .gameOver .gameOverSign {
+    display: block;
+  }
+  .gameOver .fish, .gameOver .frog {
+    display: none;
+  }
+  .gameOverSign { 
+    display:none;
+    color:red;
+  }
   .frog, .fish {
     width: 100px;
     height: 100px;
@@ -52,6 +65,7 @@
  
 </head>
 <body>
+  <h1 class="gameOverSign">Game Over</h1>
   <div class="frog"></div>
   <div class="fish fish1"></div>
   <div class="fish fish2"></div>
@@ -73,7 +87,7 @@
                 frogRect.left > fishRect.right || 
                 frogRect.bottom < fishRect.top || 
                 frogRect.top > fishRect.bottom)) {
-          console.log('overlap!!!');
+         document.body.classList.add('gameOver');
         }
       });
       setTimeout(checkFishes, 200);
