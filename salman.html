@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <head>
 <style>
+  @keyframes fishMovement {
+    0% {
+      top: 1%;
+    }
+    100% {
+      top: 90%;
+    }
+  }
   body{
     background-color: blue;
   }
@@ -10,12 +18,14 @@
     position: absolute;
     left: 0;
     top: 50%;
+    transition: 300ms ease-in-out;
   }
   .frog {
     background: green;
     z-index: 99;
   }
   .fish{
+    animation: fishMovement 600ms infinite;
     background: orange;
     z-index: 98;
   }
