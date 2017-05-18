@@ -77,17 +77,24 @@
                 astronautRect.top > junkRect.bottom)) {
          document.body.classList.add('gameOver');
         }
+        if (junkRect.bottom == 0) {
+          junkPiece.classList.remove('falling');
+          junkPiece.style.bottom = '100%';
+        }
       });
       setTimeout(checkJunk, 200);
     }, 200);
     setTimeout(function dropJunk() {
-      var junkIndex = Math.floor(Math.random() * 7);
-      var junk = junkPieces[junkIndex];
+      var junk = document.querySelectorAll('.junk:not(.falling)');
+      var junkIndex = Math.floor(Math.random() * junk.length);
+      junk = junk[junkIndex];
       junk.style.bottom = '100%';
       junk.classList.add('falling');
-      junk.style.bottom = '0%';
-      junk.style.left = astronaut.style.left;
-      setTimeout(dropJunk, 2000);
+      setTimeout(function makeJunkFall() {
+        junk.style.bottom = '0%';
+        junk.style.left = astronaut.style.left;
+        setTimeout(dropJunk, 2000);
+      }, 400);
     }, 0);
   </script>
 </body>
