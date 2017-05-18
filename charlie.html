@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <head>
 <style>
-  @keyframes fishMovement {
-    0% {
-      top: 1%;
-    }
-    50% {
-      top: 90%;
-    }
-    100% {
-      top: 1%;
-    }
-  }
   body{
     background-color: blue;
   }
@@ -21,14 +10,14 @@
   .gameOver .gameOverSign {
     display: block;
   }
-  .gameOver .fish, .gameOver .frog {
+  .gameOver .junk, .gameOver .astronaut {
     display: none;
   }
   .gameOverSign { 
     display:none;
     color:red;
   }
-  .astronaut, .fish {
+  .astronaut, .junk {
     width: 100px;
     height: 100px;
     position: absolute;
@@ -41,7 +30,6 @@
     z-index: 99;
   }
   .junk {
-    animation: fishMovement 1.5s infinite;
     background: orange;
     z-index: 98;
   }
