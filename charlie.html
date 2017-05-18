@@ -79,7 +79,7 @@
       });
       setTimeout(checkJunk, 200);
     }, 200);
-    setTimeout(function dropJunk() {
+    function dropJunk() {
       var junk = document.querySelectorAll('.junk:not(.falling)');
       var junkIndex = Math.floor(Math.random() * junk.length);
       junk = junk[junkIndex];
@@ -87,11 +87,12 @@
       junk.style.left = Math.floor(Math.random() * 100) + '%';
       junk.classList.add('falling');
       setTimeout(makeJunkFall, 400, junk);
-    }, 0);
+    }
     function makeJunkFall(junk) {
       junk.style.bottom = '0%';
       junk.style.left = astronaut.style.left;
       setTimeout(dropJunk, 2000);
     }
+    dropJunk();
   </script>
 </body>
