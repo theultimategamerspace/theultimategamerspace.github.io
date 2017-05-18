@@ -85,11 +85,12 @@
       junk = junk[junkIndex];
       junk.style.bottom = '100%';
       junk.classList.add('falling');
-      setTimeout(function makeJunkFall() {
-        junk.style.bottom = '0%';
-        junk.style.left = astronaut.style.left;
-        setTimeout(dropJunk, 2000);
-      }, 400);
+      setTimeout(makeJunkFall, 400, junk);
     }, 0);
+    function makeJunkFall(junk) {
+      junk.style.bottom = '0%';
+      junk.style.left = astronaut.style.left;
+      setTimeout(dropJunk, 2000);
+    }
   </script>
 </body>
