@@ -84,6 +84,7 @@
       var junkIndex = Math.floor(Math.random() * junk.length);
       junk = junk[junkIndex];
       junk.style.bottom = '100%';
+      junk.style.left = Math.floor(Math.random() * 100) + '%';
       junk.classList.add('falling');
       setTimeout(makeJunkFall, 400, junk);
     }, 0);
