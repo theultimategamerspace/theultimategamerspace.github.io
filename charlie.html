@@ -1,14 +1,96 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <head>
-  <style>
-    body{
-      background-color: #5697bc;
+<style>
+  @keyframes fishMovement {
+    0% {
+      top: 1%;
     }
-    h1{
-      color: #5232bc;
+    50% {
+      top: 90%;
     }
-    <style>
-  </head>
-  <body>
-  <h1>Charlie's page</h1>
+    100% {
+      top: 1%;
+    }
+  }
+  body{
+    background-color: blue;
+  }
+  body.gameOver {
+    background-color: black;
+  }
+  .gameOver .gameOverSign {
+    display: block;
+  }
+  .gameOver .fish, .gameOver .frog {
+    display: none;
+  }
+  .gameOverSign { 
+    display:none;
+    color:red;
+  }
+  .astronaut, .fish {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transition: 300ms ease-in-out;
+  }
+  .astronaut {
+    background: green;
+    z-index: 99;
+  }
+  .junk {
+    animation: fishMovement 1.5s infinite;
+    background: orange;
+    z-index: 98;
+  }
+  .junk1 {
+    left: 20%;
+    animation-delay:0s;
+  }
+  .junk2 {
+    left: 40%;
+    animation-delay:2s;
+  }
+  .junk3 {
+    left: 60%;
+    animation-delay:3s;
+  }
+  .junk4 {
+    left: 80%;
+    animation-delay:4s;
+  }
+</style>
+ 
+</head>
+<body>
+  <h1 class="gameOverSign">Game Over</h1>
+  <div class="astronaut"></div>
+  <div class="junk junk1"></div>
+  <div class="junk junk2"></div>
+  <div class="junk junk3"></div>
+  <div class="junk junk4"></div>
+  <script type="text/javascript">
+    var astronaut = document.querySelector('.astronaut');
+    var junkPieces = document.querySelectorAll('.junk');
+    window.addEventListener('keypress', function (event) {
+      if(event.code == 'Space') {
+        astronaut.style.left = (parseInt(frog.style.left || 0, 10) + 100) + 'px';
+      }
+    });
+    setTimeout(function checkJunk() {
+      var astronautRect = astronaut.getBoundingClientRect();
+      junkPieces.forEach(function (junkPiece) {
+        var junkRect = junkPiece.getBoundingClientRect();
+        if (!(astronautRect.right < junkRect.left || 
+                astronautRect.left > junkRect.right || 
+                astronautRect.bottom < junkRect.top || 
+                astronautRect.top > junkRect.bottom)) {
+         document.body.classList.add('gameOver');
+        }
+      });
+      setTimeout(checkJunk, 200);
+    }, 200);
+  </script>
 </body>
