@@ -62,11 +62,14 @@
   <script type="text/javascript">
     var astronaut = document.querySelector('.astronaut');
     var junkPieces = document.querySelectorAll('.junk');
-    window.addEventListener('keypress', function (event) {
-      if(event.code == 'Space') {
-        astronaut.style.left = (parseInt(frog.style.left || 0, 10) + 100) + 'px';
+    window.addEventListener('keyup', function (event) {
+      if(event.code == 'ArrowRight') {
+        astronaut.style.left = (parseInt(astronaut.style.left || 0, 10) + 100) + 'px';
       }
-    });
+        if(event.code == 'ArrowLeft') {
+        astronaut.style.left = (parseInt(astronaut.style.left || 0, 10) - 100) + 'px';
+        }
+            });
     setTimeout(function checkJunk() {
       var astronautRect = astronaut.getBoundingClientRect();
       junkPieces.forEach(function (junkPiece) {
