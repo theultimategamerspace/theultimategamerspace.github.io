@@ -66,10 +66,10 @@
       if(event.code == 'ArrowRight') {
         astronaut.style.left = (parseInt(astronaut.style.left || 0, 10) + 100) + 'px';
       }
-        if(event.code == 'ArrowLeft') {
+      if(event.code == 'ArrowLeft') {
         astronaut.style.left = (parseInt(astronaut.style.left || 0, 10) - 100) + 'px';
-        }
-            });
+      }
+    });
     setTimeout(function checkJunk() {
       var astronautRect = astronaut.getBoundingClientRect();
       junkPieces.forEach(function (junkPiece) {
