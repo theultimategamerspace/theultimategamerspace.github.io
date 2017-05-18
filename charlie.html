@@ -22,18 +22,26 @@
     height: 100px;
     position: absolute;
     left: 0;
-    transition: 300ms ease-in-out;
   }
   .astronaut {
     background: green;
     bottom: 2%;
     z-index: 99;
+    transition: 300ms ease-in-out;
   }
   .junk {
     background: transparent;
     z-index: 98;
     font-size: 50px;
     color: white;
+  }
+  .junk.falling {
+    transition: 1000ms ease-in;
+    animation: spin 500ms infinite;
+  }
+  @keyframes spin {
+      from { transform:rotate(0deg);   }
+      to {   transform:rotate(360deg); }
   }
 </style>
  
@@ -72,5 +80,13 @@
       });
       setTimeout(checkJunk, 200);
     }, 200);
+    setTimeout(function dropJunk() {
+      var junkIndex = Math.floor(Math.random() * 7);
+      var junk = junkPieces[junkIndex];
+      junk.style.bottom = '100%';
+      junk.classList.add('falling');
+      junk.style.bottom = '0%';
+      junk.style.left = astronaut.style.left;
+    }, 2000);
   </script>
 </body>
