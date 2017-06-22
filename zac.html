@@ -23,6 +23,17 @@
 <div class="target target3"></div>
 <div class="target target4"></div>
 <div class="target target5"></div>
-
- </body>
   
+<script type="text/javascript">
+  
+    var crosshair = document.querySelector('.crooshair');
+   
+    window.addEventListener('mousemove', function movecrosshair(mouseEvent) {
+        crosshair.style.top = mouseEvent.clientY + 'px'; 
+        crosshair.style.left = mouseEvent.clientX + 'px';
+    });
+  </script>
+</body>
+
+
+
