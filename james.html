@@ -9,7 +9,7 @@
         }
         .dot {
         width: 100px;
-        height: 100px;
+        height: 20px;
         border-radius: 100%;
         background-color: white;
         top:100vh;
@@ -23,4 +23,18 @@
 <body>
     <h1>click when the dot appears!</h1>
     <div class= 'dot'></div>
+    <button>Start</button>
+    <script>
+        var dot = document.querySelector('.dot')
+        var button = document.querySelector('button')
+      
+        button.addEventListener('click', function () {
+          var startTime = Date.now()
+          dot.addEventListener('click', function done() {
+              endTime = Date.now() - startTime
+              header.textContent = 'took ' + endTime + 'ms'
+              dot.removeEventListener('click', done)
+          })
+        })
+    </script>
 </body>
