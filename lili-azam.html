@@ -27,7 +27,7 @@
     position: absolute;
     top: 100vh;
     left: 20vw;
-    transition: 900ms ease-in-out;
+    transition: 800ms ease-in-out;
   }
   .apple {
     background-color:#A02323;
@@ -81,9 +81,9 @@
       fruits[fruitIndex].classList.remove(left > 50 ? 'left' : 'right');
       setTimeout(function dropFruit() {
         fruits[fruitIndex].style.top = '100vh';
-        setTimeout(throwFruit, 900);
-      }, 900);
-    }, 1800);
+        setTimeout(throwFruit, 800);
+      }, 800);
+    }, 1600);
     var knife = document.querySelector('.knife');
     var knifeTracking = false;
     window.addEventListener('mousedown', function showBlade() {
